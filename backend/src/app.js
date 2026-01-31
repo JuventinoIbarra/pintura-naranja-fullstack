@@ -9,11 +9,26 @@ const productRoutes = require("./routes/product.routes")
 const app = express();
 
 app.use((req, res, next) => {
+    const allowedOrigins = [
+        "https://juventinoibarra.github.io",
+        "http://127.0.0.1:5500",
+        "http://localhost:5500"
+    ];
+
     const origin = req.headers.origin;
 
-    res.header("Access-Control-Allow-Origin", origin);
-    res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    if (allowedOrigins.includes(origin)) {
+        res.setHeader("Access-Control-Allow-Origin", origin);
+    }
+
+    res.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET, POST, PUT, DELETE, OPTIONS"
+    );
+    res.setHeader(
+        "Access-Control-Allow-Headers",
+        "Content-Type, Authorization"
+    );
 
     if (req.method === "OPTIONS") {
         return res.sendStatus(200);
