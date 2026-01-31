@@ -1,0 +1,208 @@
+body{
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    margin: 0;
+}
+
+.login-page{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container{
+    background: white;
+    padding: 25px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.login-container input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.login-container button{
+    width: 100%;
+    padding: 10px;
+    background: #ff7a00;
+    border: none;
+    color:white;
+    cursor: pointer;
+}
+
+.login-container button:hover{
+    background: #e86d00;
+}
+
+.error{
+    color:red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.order-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+
+/* HEADER */
+.header {
+    background: #ff7a00;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+}
+
+/* CONTENEDOR */
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+/* TARJETAS */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+/* PRODUCTOS */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.product h4 {
+    margin: 0 0 5px;
+}
+
+.product input {
+    width: 60px;
+}
+
+/* BOTÓN */
+.primary-btn {
+    background: #ff7a00;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.primary-btn:hover {
+    opacity: 0.9;
+}
+
+/* PEDIDOS */
+.order-card {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status.pendiente { background: #fff3cd; color: #856404; }
+.status.pagado { background: #d4edda; color: #155724; }
+.status.enviado { background: #cce5ff; color: #004085; }
+.status.entregado { background: #e2e3e5; color: #383d41; }
+.status.cancelado { background: #f8d7da; color: #721c24; }
+
+.products-list {
+    margin: 10px 0;
+    padding-left: 18px;
+}
+
+.order-footer {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.product-card input[type="number"] {
+    width: 60px;
+}
+
+button {
+    background: #ff7a00;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.order-card {
+    border-left: 5px solid #ff7a00;
+    padding: 10px;
+    margin-bottom: 15px;
+}
