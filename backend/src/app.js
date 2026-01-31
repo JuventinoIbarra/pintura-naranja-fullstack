@@ -11,12 +11,10 @@ const app = express();
 
 app.use(cors({
     origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
-
-app.options("*", cors());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/test", testRoutes);
