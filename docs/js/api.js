@@ -1,4 +1,4 @@
-const API_URL = "https://pintura-naranja-backend.onrender.com/api";
+const API_URL = "https://pintura-naranja-fullstack.onrender.com/api";
 
 async function apiFetch(endpoint, options={}) {
     const token = localStorage.getItem("token");
