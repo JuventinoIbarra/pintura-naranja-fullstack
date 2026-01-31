@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require('mongoose');
-const cors = require("cors");
 
 const authRoutes = require("./routes/auth.routes");
 const testRoutes = require("./routes/test.routes");
@@ -9,11 +8,22 @@ const productRoutes = require("./routes/product.routes")
 
 const app = express();
 
-app.use(cors({
-    origin: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-}));
+app.use((req, res, next) => {
+    const origin = req.headers.origin;
+
+    res.header("Access-Control-Allow-Origin", origin);
+    res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+    if (req.method === "OPTIONS") {
+        return res.sendStatus(200);
+    }
+
+    next();
+});
+
+
+
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
