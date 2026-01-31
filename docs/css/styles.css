@@ -1,57 +1,128 @@
-body{
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    margin: 0;
+/* ===== RESET BÁSICO ===== */
+* {
+    box-sizing: border-box;
 }
 
-.login-page{
-    height: 100vh;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f2f2f2;
+}
+
+/* ===== BOTONES ===== */
+.btn-primary {
+    background: #ff7a00;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: #e86d00;
+}
+
+.btn-secondary {
+    background: #555;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background: #333;
+}
+
+button:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+/* ===== HOME ===== */
+.home-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff7a00, #ffb347);
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.login-container{
+
+.home-card {
     background: white;
-    padding: 25px;
-    width: 300px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-}
-
-.login-container input{
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-.login-container button{
-    width: 100%;
-    padding: 10px;
-    background: #ff7a00;
-    border: none;
-    color:white;
-    cursor: pointer;
-}
-
-.login-container button:hover{
-    background: #e86d00;
-}
-
-.error{
-    color:red;
+    padding: 40px;
+    width: 420px;
+    border-radius: 12px;
     text-align: center;
-    margin-top: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
 }
 
-.order-card {
-    border: 1px solid #ccc;
+.home-card h1 {
+    color: #ff7a00;
+    margin-bottom: 15px;
+}
+
+.home-description {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.home-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* ===== LOGIN & REGISTER ===== */
+.auth-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff7a00, #ffb347);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    background: white;
+    padding: 30px;
+    width: 320px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,.15);
+    text-align: center;
+}
+
+.auth-card h2 {
+    margin-bottom: 20px;
+}
+
+.auth-card input {
+    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border-radius: 6px;
-    background-color: #f9f9f9;
 }
 
-/* HEADER */
+.auth-link {
+    margin-top: 15px;
+}
+
+.auth-link a {
+    color: #ff7a00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ===== ERRORES ===== */
+.error {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* ===== LAYOUT GENERAL ===== */
 .header {
     background: #ff7a00;
     color: white;
@@ -59,14 +130,12 @@ body{
     text-align: center;
 }
 
-/* CONTENEDOR */
 .container {
     max-width: 1000px;
     margin: 30px auto;
     padding: 0 15px;
 }
 
-/* TARJETAS */
 .card {
     background: white;
     padding: 20px;
@@ -75,55 +144,30 @@ body{
     box-shadow: 0 3px 8px rgba(0,0,0,0.08);
 }
 
-.card h2 {
-    margin-top: 0;
-}
-
-/* PRODUCTOS */
+/* ===== PRODUCTOS ===== */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 15px;
-    margin-bottom: 15px;
-    margin-left: 20px;
 }
 
-.product {
+.product-card {
     border: 1px solid #ddd;
     border-radius: 6px;
     padding: 10px;
 }
 
-.product h4 {
-    margin: 0 0 5px;
-}
-
-.product input {
+.product-card input {
     width: 60px;
 }
 
-/* BOTÓN */
-.primary-btn {
-    background: #ff7a00;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-left: 20px;
-}
-
-.primary-btn:hover {
-    opacity: 0.9;
-}
-
-/* PEDIDOS */
+/* ===== PEDIDOS ===== */
 .order-card {
-    border: 1px solid #ddd;
+    border-left: 5px solid #ff7a00;
     border-radius: 6px;
     padding: 12px;
     margin-bottom: 15px;
+    background: #fff;
 }
 
 .order-header {
@@ -157,105 +201,58 @@ body{
     font-weight: bold;
 }
 
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-}
+/* ===== RESPONSIVE (MOBILE FIRST) ===== */
 
-.card {
-    background: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,.1);
-}
+@media (max-width: 768px) {
 
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 15px;
-}
+    /* HOME */
+    .home-card {
+        width: 90%;
+        padding: 30px 20px;
+    }
 
-.product-card {
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 6px;
-}
+    .home-actions {
+        flex-direction: column;
+    }
 
-.product-card input[type="number"] {
-    width: 60px;
-}
+    .home-actions a {
+        width: 100%;
+        text-align: center;
+    }
 
-button {
-    background: #ff7a00;
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    /* AUTH (LOGIN / REGISTER) */
+    .auth-card {
+        width: 90%;
+        padding: 25px 20px;
+    }
 
-button:disabled {
-    background: #aaa;
-    cursor: not-allowed;
-}
+    /* CONTENEDORES */
+    .container {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
 
-.home-container {
-    background: white;
-    padding: 40px;
-    width: 400px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0,0,0,.15);
-}
+    /* PRODUCTOS */
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
 
-.home-container h1 {
-    color: #ff7a00;
-    margin-bottom: 15px;
-}
+    /* PEDIDOS */
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
 
-.home-container p {
-    color: #555;
-    margin-bottom: 25px;
-}
+    .order-footer {
+        flex-direction: column;
+        gap: 8px;
+    }
 
-.btn-primary {
-    display: inline-block;
-    padding: 12px 20px;
-    background: #ff7a00;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-}
-
-.btn-primary:hover {
-    background: #e86d00;
-}
-
-.order-card {
-    border-left: 5px solid #ff7a00;
-    padding: 10px;
-    margin-bottom: 15px;
-}
-
-.home-actions {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-.btn-secondary {
-    display: inline-block;
-    padding: 12px 20px;
-    background: #555;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-}
-
-.btn-secondary:hover {
-    background: #333;
+    /* BOTONES */
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
 }
