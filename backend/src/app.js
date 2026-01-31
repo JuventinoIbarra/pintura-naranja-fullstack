@@ -16,7 +16,7 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/test", testRoutes);
 app.use("/api/orders", orderRoutes);
-app.use("/api/products", productRoutes)
+app.use("/api/products", productRoutes);
 
 
 app.get("/", (req, res) =>{
