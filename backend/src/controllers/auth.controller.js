@@ -32,10 +32,6 @@ exports.register = async (req,res) => {
             error: error.message
         });
     }
-    
-    //catch(error){
-        //res.status(500).json({message: "Error en el servidor1"})
-    //}
 };
 
 exports.login = async (req,res) =>{
@@ -77,7 +73,4 @@ exports.login = async (req,res) =>{
             error: error.message
         });
     }
-    // }catch(error){
-    //     res.status(500).json({message:"Error en el servidor2"})
-    // }
 }
