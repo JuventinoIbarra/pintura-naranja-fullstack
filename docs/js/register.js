@@ -1,15 +1,22 @@
 document.getElementById("registerForm").addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    const nombre = document.getElementById("nombre").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value;
-
+    const nombreInput = document.getElementById("nombre");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
     const errorDiv = document.getElementById("error");
+
+    const nombre = nombreInput.value.trim();
+    const email = emailInput.value.trim();
+    const password = passwordInput.value;
+
     errorDiv.textContent = "";
 
-    if (password.length < 6) {
-        errorDiv.textContent = "La contraseña debe tener al menos 6 caracteres";
+    // PRUEBA DE ORO
+    console.log("VALORES:", { nombre, email, password });
+
+    if (!nombre) {
+        errorDiv.textContent = "El nombre es obligatorio";
         return;
     }
 
@@ -25,8 +32,8 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
 
         alert("Usuario registrado correctamente");
         window.location.href = "login.html";
-
-    } catch (error) {
-        errorDiv.textContent = error.message || "Error al registrarse";
+    } catch (err) {
+        console.error(err);
+        errorDiv.textContent = err.message || "Error al registrar usuario";
     }
 });
