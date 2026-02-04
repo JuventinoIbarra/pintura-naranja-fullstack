@@ -17,7 +17,7 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
         await apiFetch("/auth/register", {
             method: "POST",
             body: JSON.stringify({
-                name,
+                nombre,
                 email,
                 password
             })
